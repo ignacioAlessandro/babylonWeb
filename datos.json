@@ -1,0 +1,57 @@
+[
+
+    [
+        {"name":"objArriba1","diametro":1.5,"posY":6, "velX":3.4,"velY":10},
+        
+        {"name":"objAbajo1","diametro":1.5,"posY":-2,"velX":3.49,"velY":0}
+    ],
+
+    [
+        {"name":"objArriba1","diametro":1.5,"posY":6, "velX":3.4,"velY":10},
+        
+        {"name":"objAbajo2","diametro":2.5,"posY":-2,"velX":3.49,"velY":0}
+    ],
+
+    [
+        {"name":"objArriba2", "diametro":2.5,"posY":6, "velX":3.4,"velY":10},
+        
+        {"name":"objAbajo1", "diametro":1.5, "posY":-2, "velX":3.49,"velY":0}
+    ],
+
+    [
+        {"name":"objArriba1", "diametro":1.5, "posY":6, "velX":3.4, "velY":10},
+        
+        {"name":"objAbajo3", "diametro":3.3, "posY":-2, "velX":3.5,"velY":0}
+    ],
+
+    [
+        {"name":"objArriba3", "diametro":3.3, "posY":5, "velX":3.2, "velY":20},
+        
+        {"name":"objAbajo1", "diametro":1.5, "posY":-2, "velX":3.4,"velY":0}
+    ],
+
+    [
+        {"name":"objArriba2", "diametro":2.5, "posY":6, "velX":2.9, "velY":10},
+        
+        {"name":"objAbajo2", "diametro":2.5, "posY":-2, "velX":3,"velY":0}
+    ],
+    
+    [
+        {"name":"objArriba2", "diametro":2.5, "posY":6, "velX":2.9, "velY":10},
+        
+        {"name":"objAbajo3", "diametro":3.3, "posY":-2, "velX":3,"velY":0}
+    ],
+
+    [
+        {"name":"objArriba3", "diametro":3.3, "posY":5, "velX":3, "velY":20},
+        
+        {"name":"objAbajo2", "diametro":2.5, "posY":-2, "velX":3,"velY":0}
+    ],
+
+    [
+        {"name": "objArriba3", "diametro":3.3, "posY":5, "velX":2.8, "velY":20},
+        
+        {"name": "objAbajo3", "diametro":3.3, "posY":-2, "velX":3,"velY":0}
+    ]
+
+]

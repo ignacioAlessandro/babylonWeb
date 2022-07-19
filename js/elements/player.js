@@ -1,81 +1,37 @@
+import { Ecena } from "../scene.js";
+import { Text } from "../text.js";
 //creacion de jugador
-export class Player{
-    constructor(posX,posY,posZ,width,height){
-        this.posX = posX;
-        this.posY = posY;
-        this.posZ =  posZ;
-        this.width = width;
-        this.height = height; 
-    }
-    CreateBox(){
-        const box = BABYLON.MeshBuilder.CreateBox("box", {});
-    }
-}
+export const Jugador =  {
+  CreateBox: function(){
 
+    // creacion y adicion de fisica de obstaculos
+    const box = BABYLON.MeshBuilder.CreateBox("box", {size:2},this.scene);
+    box.position = new BABYLON.Vector3(10, -3, -8)
+    box.PhysicsImpostor  = new BABYLON.PhysicsImpostor(box, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 1, restitution: 0}, this.scene);
 
-
-
-/*
-
-import {keyboard} from "../utils/keyboard.js";
-import { wall } from "./wall.js";
-import { game } from "../game.js";
-import { collision } from "../utils/collision.js";
-
-
-export const player =
-{
-  x: 100,
-  y: 0,
-  width: 45,
-  height: 100,
-  jumpForce: null,
-  maxJumpForce: 9,
-  inven : false,
-
-
-  fisica  personaje
-
-box.PhysicsImpostor  = new BABYLON.PhysicsImpostor(box, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 1, restitution: 0.9 }, scene);
-
-
-
-    colicion
-    box.PhysicsImpostor.registerOnPhysicsCollide(box2.PhysicsImpostor, function(main, collided) {
-    scene.removeMesh(box2);
+      //move player
+    document.addEventListener('keydown', (event) => {
+      const keyName = event.key;
+      if (event.key == `w`) {
+        box.PhysicsImpostor.setLinearVelocity(new BABYLON.Vector3(0, 8, 0))
+      }   
+    });
+    document.addEventListener('keydown', (event) => {
+      const keyName = event.key;
+      if (event.key == `s`) {
+        box.PhysicsImpostor.setLinearVelocity(new BABYLON.Vector3(0, -8, 0))
+      }   
     });
 
-
-  checkCollision: function()
-  {
-  },
-
-
-
-
-
-
-  move: function()
-  {
-  },
-
-};
-
-move function nueva 
-
-    document.addEventListener('keydown', (event) => {
-        const keyName = event.key;
-        if (event.key == `y`) {
-          box.PhysicsImpostor.setLinearVelocity(new BABYLON.Vector3(0, 8, 0))
-        }   
-      });
-      document.addEventListener('keydown', (event) => {
-        const keyName = event.key;
-        if (event.key == `h`) {
-          box.PhysicsImpostor.setLinearVelocity(new BABYLON.Vector3(0, -8, 0))
-        }   
-      });
-
-
-
-*/
+    const Pared = BABYLON.MeshBuilder.CreateBox("pared",{width: 80, height: 80, depth: 1},this.scene);
+    Pared.position = new BABYLON.Vector3(13,0,0);
+    Pared.rotation.y = Math.PI /2,Math.PI /3,0; 
+    setInterval(()=>{
+      if (box.intersectsMesh(Pared, false)) {
+        Text.gameOver()
+        
+      }  
+    }, 2000); 
+    
+}
+}
